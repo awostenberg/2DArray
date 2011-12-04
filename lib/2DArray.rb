@@ -36,4 +36,8 @@ class Array2D
   def include?(thing)
     @stuff.flatten(1).include?(thing)
   end
+
+  def size
+    @stuff.flatten(1).size
+  end
 end
