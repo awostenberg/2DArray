@@ -1,6 +1,6 @@
 class Array2D
   def initialize(rows, cols, default=nil)
-    @stuff = Array.new(rows, []) {Array.new(cols, nil)}
+    @stuff = Array.new(rows, []) {Array.new(cols, default)}
   end
 
   # Redefined Object#method_missing as to forward the undefined

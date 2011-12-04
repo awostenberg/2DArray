@@ -2,7 +2,7 @@ require 'rubygems'
 
 Gem::Specification.new do |spec|
   spec.name = '2DArray'
-  spec.version = "0.1.2"
+  spec.version = "0.1.3"
   spec.author = "J. Wostenberg"
   spec.homepage = "http://github.com/awostenberg/2DArray"
   spec.summary = "2-dimensional arrays in Ruby."
