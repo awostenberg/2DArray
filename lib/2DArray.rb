@@ -1,6 +1,22 @@
 class Array2D
-  def initialize(rows, cols, default=nil)
-    @stuff = Array.new(rows, []) {Array.new(cols, default)}
+  def initialize(rows=0, cols=0, default=nil)
+    @stuff = Array.new(rows) {Array.new(cols, default)}
+  end
+
+  # Iterate through each element, while passing the object, its +x+ and +y+ position to the block.
+  def each
+    x = 0
+    y = 0
+    size.times do |s|
+      yield(self[x, y], x, y)
+      # Restart at +width - 1+ because the array starts at +0, 0+ not +1, 1+.
+      if x == width - 1
+        x = 0
+        y += 1
+      else
+        x += 1
+      end
+    end
   end
 
   # Redefined Object#method_missing as to forward the undefined
@@ -40,4 +56,11 @@ class Array2D
   def size
     @stuff.flatten(1).size
   end
+
+  # Returns the number of rows.
+  def width
+    @stuff.size
+  end
+
+  # TODO: Implement a method to return the number of columns.
 end
